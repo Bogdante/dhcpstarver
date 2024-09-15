@@ -25,7 +25,7 @@ type DhcpHeader struct {
 	options [64]byte
 }
 
-func CreateDhcpDiscoverPackage(lastRequestIpByte byte) ([]byte, error) {
+func CreateDhcpRequestPackage(lastRequestIpByte byte) ([]byte, error) {
 
 	var dhcpPack DhcpHeader
 	dhcpPack.op = 1

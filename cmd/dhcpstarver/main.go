@@ -18,7 +18,7 @@ func main() {
 	}
 
 	for i := config.IP_POOL_START_LAST_BYTE; i <= config.IP_POOL_END_LAST_BYTE; i++ {
-		pack, err := dhcp.CreateDhcpDiscoverPackage(byte(i))
+		pack, err := dhcp.CreateDhcpRequestPackage(byte(i))
 
 		if err != nil {
 			log.Printf("Error reserving IP with %d last byte ...", i)

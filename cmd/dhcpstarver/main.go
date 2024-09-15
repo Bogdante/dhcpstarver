@@ -21,13 +21,13 @@ func main() {
 		pack, err := dhcp.CreateDhcpDiscoverPackage(byte(i))
 
 		if err != nil {
-			log.Printf("Error sending %d package ...", i)
+			log.Printf("Error reserving IP with %d last byte ...", i)
 		}
 
 		err = client.SendBuffer(pack)
 
 		if err != nil {
-			log.Printf("Error sending buffer %d package ...", i)
+			log.Printf("Error sending buffer with reserved last byte %d ...", i)
 		}
 
 		time.Sleep(config.TIMEOUT_BETWEEN_PACKAGES * time.Millisecond)

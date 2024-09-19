@@ -1,6 +1,8 @@
 package networking
 
-import "net"
+import (
+	"net"
+)
 
 type Client struct {
 	connection net.Conn

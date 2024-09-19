@@ -53,10 +53,10 @@ func CreateDhcpRequestPackage(lastRequestIpByte byte) ([]byte, error) {
 
 	customOptions := make([]byte, 0, 64)
 	customOptions = append(customOptions, 0x63, 0x82, 0x53, 0x63)                  // Magic COOKIE: DHCP
-	customOptions = append(customOptions, 0x32, 4, 192, 168, 0, lastRequestIpByte) // Request Address
 	customOptions = append(customOptions, 0x35, 0x01, 0x03)                        // TYPE Message Request
+	customOptions = append(customOptions, 0x32, 4, 192, 168, 0, lastRequestIpByte) // Request Address
+	customOptions = append(customOptions, 0xff)                                    // END
 
-	customOptions = append(customOptions, 0xff) // END
 	copy(dhcpPack.options[:], customOptions)
 
 	var buffer bytes.Buffer

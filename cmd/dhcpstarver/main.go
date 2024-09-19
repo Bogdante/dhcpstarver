@@ -21,7 +21,7 @@ func main() {
 		pack, err := dhcp.CreateDhcpRequestPackage(byte(i))
 
 		if err != nil {
-			log.Printf("Error reserving IP with %d last byte ...", i)
+			log.Printf("Error creating DHCP REQUEST PACKAGE with %d last byte ...", i)
 		}
 
 		err = client.SendBuffer(pack)

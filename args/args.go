@@ -10,7 +10,7 @@ import (
 func ParseCmdArguments() (bool, *networking.IpAddress, *networking.IpAddress, int64) {
 	option := flag.Bool("r", true, "Send DHCP Request Packages")
 	poolStart := flag.String("s", "192.168.0.100", "Starting IP-address from DHCP pool")
-	poolEnd := flag.String("e", "192.168.0.200", "End IP-adrees from DHCP pool")
+	poolEnd := flag.String("e", "192.168.0.200", "Final IP-adrees from DHCP pool")
 	delay := flag.Int64("d", 1000, "Delay between sent packages")
 
 	flag.Parse()

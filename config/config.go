@@ -1,7 +1,0 @@
-package config
-
-const (
-	TIMEOUT_BETWEEN_PACKAGES = 500
-	IP_POOL_START_LAST_BYTE  = 99
-	IP_POOL_END_LAST_BYTE    = 200
-)
